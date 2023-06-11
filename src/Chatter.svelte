@@ -50,6 +50,7 @@
                 content: msg.text
             }));
 
+
             const lambdaResponse = await callLambda(formattedMessages);
             if (lambdaResponse) {
                 messages.update(n => [...n, { sender: 'robot', text: lambdaResponse }]);

@@ -11,23 +11,31 @@
     };
 
     const shareGameData = async () => {
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: 'My Game Data',
-                    text: 'Check out my game data!',
-                    url: `data:text/plain;charset=utf-8,${encodeURIComponent($gameData)}`
-                });
-            } catch (err) {
-                console.error('There was an error sharing:', err);
-            }
-        } else {
-            try {
-                await navigator.clipboard.writeText(getShareGameData());
-                buttonText.set('Copied to Clipboard');
-            } catch (err) {
-                console.error('Could not copy text: ', err);
-            }
+        // if (navigator.share) {
+        //     try {
+        //         await navigator.share({
+        //             title: 'My Game Data',
+        //             text: 'Check out my game data!',
+        //             url: `data:text/plain;charset=utf-8,${encodeURIComponent($gameData)}`
+        //         });
+        //     } catch (err) {
+        //         console.error('There was an error sharing:', err);
+        //     }
+        // } else {
+        //     try {
+        //         await navigator.clipboard.writeText(getShareGameData());
+        //         buttonText.set('Copied to Clipboard');
+        //     } catch (err) {
+        //         console.error('Could not copy text: ', err);
+        //     }
+        // }
+        //
+
+        try {
+            await navigator.clipboard.writeText(getShareGameData());
+            buttonText.set('Copied to Clipboard');
+        } catch (err) {
+            console.error('Could not copy text: ', err);
         }
     };
 

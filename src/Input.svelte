@@ -25,7 +25,7 @@
     }
 
     // Convert both inputText and forbidden words to lowercase for comparison
-    const lowerCaseInputText = inputText.toLowerCase();
+    const lowerCaseInputText = inputText.toLowerCase().replace(/\s/g, '');
     const forbiddenWord = $words.find(w => lowerCaseInputText.includes(w.word.toLowerCase()));
 
     if(forbiddenWord) {
