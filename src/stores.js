@@ -78,9 +78,9 @@ export const systemMessages = writable([
 export const typing = writable(false);
 
 export const words = writable([
-    {word: 'energy', status: 'red'},
-    {word: 'sugar', status: 'red'},
-    {word: 'light', status: 'red'}
+    {word: 'Light', status: 'red'},
+    {word: 'Jupiter', status: 'red'},
+    {word: 'Milky', status: 'red'}
 ]);
 
 export const sidebarOpen = writable(false);
